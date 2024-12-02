@@ -22,10 +22,16 @@ if ($result->num_rows > 0) {
         $_SESSION['role']=$user['admin'];
         header("location:checkstatus.php?status=$st");
     } else {
-        echo "Invalid password!";
+        echo "<script>
+    alert('Incorrect Password');
+    window.location.href = 'login.html';
+</script>";
     }
 } else {
-    echo "No user found with this email!";
+    echo "<script>
+    alert('No profile with such Email found');
+    window.location.href = 'login.html';
+</script>";
 }
 
 // Close the connection
