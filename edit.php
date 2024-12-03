@@ -316,7 +316,7 @@ if ($weight !== false && ($weight < 30 || $weight > 200)) {
                 <textarea class="form-control" id="expectation" name="expectation" rows="4"><?php echo htmlspecialchars($profile['expectation']); ?></textarea>
             </div>
             <div class="text-center mt-4">
-                <button type="submit" class="btn btn-save">Save Changes</button>
+                <button type="submit" class="btn" style="background-color: #CC2B52;color:white">Save Changes</button>
             </div>
         </form>
         <?php 
@@ -324,7 +324,7 @@ if ($weight !== false && ($weight < 30 || $weight > 200)) {
             echo ' <a
             name=""
             id=""
-            class="btn btn-primary"
+            class="btn btn-warning"
             href="deact.php?id='.$id.'"
             role="button"
             >Deactivate Profile</a
@@ -334,7 +334,7 @@ if ($weight !== false && ($weight < 30 || $weight > 200)) {
             echo ' <a
             name=""
             id=""
-            class="btn btn-primary"
+            class="btn btn-success"
             href="act.php?id='.$id.'"
             role="button"
             >Activate Profile</a

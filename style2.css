@@ -1,0 +1,101 @@
+.navbar{
+    background-color: #CC2B52;
+}
+
+.pf1{
+    background-image: url(images/mainbg1.png);
+}
+
+.pfm{
+    font-family: "Montserrat";
+font-size: 3rem;
+font-style: italic;
+font-weight: 500;
+line-height: 91.43px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color:#AF1740;
+;
+
+}
+
+.gs{
+    padding: 2rem;
+    background-color:#AF1740;
+    color: white;
+    border:none;
+    border-radius:39.5px;
+    text-decoration: none;
+}
+.sec2img {
+    width: 100%;
+    max-height: 70vh; /* Adjusts the maximum height */
+    display: block; /* Ensures there's no gap below the image */
+}
+
+.image-container {
+    position: relative; /* Allows absolute positioning of the overlay */
+}
+
+.text-overlay {
+    position: absolute; /* Positioning relative to the container */
+    top: 40%; /* Center vertically */
+    left: 25%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for center alignment */
+    color: white; /* Text color */
+    padding: 20px; /* Add some padding for better readability */
+    border-radius: 10px; /* Optional: rounded corners for aesthetics */
+    font-family: "Italiana", serif;
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 101.31px;
+}
+
+.sec3{
+    background: #AF1740;
+
+}
+
+.rounded-rectangle {
+    background: #E8F0CE;
+ /* Background color of the rectangle */
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding: 30px; /* Padding inside the rectangle */
+    text-align: center; /* Center text alignment */
+    
+}
+.rounded-rectangle2 {
+    background: #E8F0CE;
+ /* Background color of the rectangle */
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    padding: 30px; /* Padding inside the rectangle */
+    text-align: center; /* Center text alignment */
+    
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .text-overlay {
+        font-size: 1rem; /* Smaller font size on smaller screens */
+        padding: 10px; /* Less padding on smaller screens */
+        line-height:1.5rem
+    }
+}
+
+.sec3t{
+    color:#AF1740;
+    font-family: "Italiana", serif;
+    font-weight: 400;
+    font-size: 7vh;
+}
+
+.sec3p{
+    font-family: "Montserrat";
+    font-style: italic;
+    font-weight: 300;
+    font-size: 3vh;
+}

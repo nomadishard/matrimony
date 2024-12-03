@@ -1,10 +1,30 @@
-<nav class="navbar navbar-light" style="border-bottom:solid">
-<a class="navbar-brand" href="home.php">
-              <img src="KOKAN_CONNECT.png" class="d-inline-block align-top" alt="" style="max-height: 20vh;">
-          </a>
-  <ul class="navbar-nav me-4">
-      <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center ms-4" href="home.php">
+                    <img src="images/navlogo.png" class="d-inline-block align-top ms-2" alt="" style="max-height: 20vh;">
+                    <span style="font-family: Montserrat, sans-serif; font-weight: 800; font-style: italic; color: white;" class="ms-2">KOKAN RISHTA</span>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto" style="align-items: center;">
+                  <li class="nav-item active">
+                    <a class="nav-link p-3" href="home.php" style="font-family: Montserrat, sans-serif;
+                    font-weight: 500;
+                    color: white;">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link p-3" href="#"  style="font-family: Montserrat, sans-serif;
+                    font-weight: 500;
+                    color: white;">About Us</a>
+                  </li>
+                  <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-family: Montserrat, sans-serif;
+                font-weight: 500;
+                color: white;">
           <?php
       $u = $_SESSION['user_id'];
                 $sql = "SELECT * FROM profiles WHERE ProfileID=$u";
@@ -19,5 +39,19 @@
             <li><a href="logout.php" class="dropdown-item">LOGOUT</a></li>
           </ul>
         </li>
-        </ul>
-</nav>
+                </ul>
+              </div>
+                </div>
+            </nav>
+
+
+
+
+
+
+
+
+
+        <style>.navbar{
+          background-color: #CC2B52;
+        }</style>

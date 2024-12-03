@@ -60,6 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
     <head>
         <title>Signup</title>
+        <link rel="stylesheet" href="nav2.css">
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
@@ -78,26 +79,53 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <body>
     <header>
-        <nav class="navbar navbar-light" style="border-bottom:solid">
-          <a class="navbar-brand" href="index.html">
-              <img src="KOKAN_CONNECT.png" class="d-inline-block align-top" alt="" style="max-height: 20vh;">
-          </a>
-          <a href="login.html" class="ms-auto nav-link">LOGIN</a>
-        </nav>
-    </header>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand d-flex align-items-center ms-4" href="index.html">
+                    <img src="images/navlogo.png" class="d-inline-block align-top ms-2" alt="" style="max-height: 20vh;">
+                    <span style="font-family: Montserrat, sans-serif; font-weight: 800; font-style: italic; color: white;" class="ms-2">KOKAN RISHTA</span>
+                </a>
+                
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link p-3" href="index.html" style="font-family: Montserrat, sans-serif;
+                    font-weight: 500;
+                    color: white;">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link p-3" href="#"  style="font-family: Montserrat, sans-serif;
+                    font-weight: 500;
+                    color: white;">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link p-3" href="login.html"  style="font-family: Montserrat, sans-serif;
+                    font-weight: 500;
+                    color: white;">Login</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+        </header>
         <main>
         <style>
   
   .form-container {
-    background-color: #ffffff;
+    background-color: #E8F0CE;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     padding: 30px;
     margin-top: 20px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5); /* White with 50% opacity */
+    backdrop-filter: blur(10px);
+
   }
   
   .form-title {
-    color: #007bff;
+    color:#E44B70;
     font-weight: bold;
     margin-bottom: 30px;
     text-align: center;
@@ -118,34 +146,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
   
   .btn-submit {
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #CC2B52;
     border-radius: 8px;
+    border: none;
     padding: 10px 30px;
     font-weight: bold;
     transition: all 0.3s ease;
   }
   
   .btn-submit:hover {
-    background-color: #0056b3;
+    background-color:#AF1740;
     border-color: #0056b3;
   }
   
   .form-section {
-    background-color: #f1f3f5;
+    background-color:white;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
   }
   
   .form-section-title {
-    color: #007bff;
+    color: #E44B70;
     font-weight: bold;
     margin-bottom: 15px;
   }
 </style>
 
-<div class="container form-container">
+<div class="container form-container mb-5">
   <h2 class="form-title">Personal Information Form</h2>
   <form class="needs-validation" novalidate method="post" action="#" enctype="multipart/form-data">
     <div class="form-section">
@@ -178,10 +206,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <div class="invalid-feedback">Please select a gender.</div>
         </div>
         <div class="col-md-4">
-          <label for="dob" class="form-label">Date of Birth</label>
-          <input type="date" class="form-control" id="dob" required name="dob">
-          <div class="invalid-feedback">Please provide a valid date of birth.</div>
-        </div>
+    <label for="dob" class="form-label">Date of Birth</label>
+    <input type="date" class="form-control" id="dob" required name="dob">
+    <div class="invalid-feedback">Please provide a valid date of birth.</div>
+    <div id="ageValidationMessage" style="color: red;"></div>
+</div>
+
+<script>
+document.getElementById("dob").addEventListener("change", validateAge);
+
+function validateAge() {
+    const dobInput = document.getElementById("dob").value;
+    const messageElement = document.getElementById("ageValidationMessage");
+
+    if (!dobInput) {
+        messageElement.textContent = "Please enter your date of birth.";
+        return; // Exit if no date is entered
+    }
+
+    const dob = new Date(dobInput);
+    const today = new Date();
+    const age = today.getFullYear() - dob.getFullYear();
+    const monthDifference = today.getMonth() - dob.getMonth();
+
+    // Check if the user is 18 or older
+    if (age > 18 || (age === 18 && monthDifference > 0) || (age === 18 && monthDifference === 0 && today.getDate() >= dob.getDate())) {
+        messageElement.textContent = ""; // Clear any previous messages
+        // You can add additional logic here for when age is valid
+    } else {
+        messageElement.textContent = "You must be at least 18 years old.";
+    }
+}
+
+</script>
+
         <div class="col-md-4">
           <label for="religion" class="form-label">Religion</label>
           <input type="text" class="form-control" id="religion" name="religion">
@@ -350,8 +408,9 @@ document.getElementById('profilePicture').addEventListener('change', function(ev
 })()
 </script>
         </main>
-        <footer>
-            <!-- place footer here -->
+        <footer class="footer">
+            <p style="background: #72001F;color: white;padding-bottom: 0px;margin-bottom: 0px;text-align: center;
+">&copy; 2024 KOKANRISHTA.IN . All rights reserved.</p>
         </footer>
         <!-- Bootstrap JavaScript Libraries -->
         <script

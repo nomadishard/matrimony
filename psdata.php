@@ -1,7 +1,7 @@
 <?php
 include 'connect.php';
 session_start();
-$id = $_GET['id'];
+$id = $_POST['id'];
 $sql = "SELECT * FROM profiles WHERE ProfileID = ?";
 $stmt = mysqli_prepare($conn, $sql);
 mysqli_stmt_bind_param($stmt, "i", $id);
@@ -146,7 +146,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['request_contact'])) {
                 <img src="<?php echo htmlspecialchars($profile['profile_picture']); ?>" alt="Profile Picture" class="img-fluid rounded-circle profile-picture mb-3">
             </div>
             <div class="col-md-8">
-                <h2><?php echo strtoupper(htmlspecialchars($profile['FirstName'] . ' ' . $profile['middlename'] . ' ' . $profile['LastName'])); ?></h2>
+                <h2 
+                style="color:#CC2B52"><?php echo strtoupper(htmlspecialchars($profile['FirstName'] . ' ' . $profile['middlename'] . ' ' . $profile['LastName'])); ?></h2>
                 <table class="table table-hover">
                     <tr>
                         <th>Gender</th>
@@ -184,18 +185,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['request_contact'])) {
                         <th>Occupation</th>
                         <td><?php echo htmlspecialchars($profile['Occupation']); ?></td>
                     </tr>
-                    <tr>
-                        <th>Contact Number</th>
-                        <td>Contact details hidden</td>
-                    </tr>
-                    <tr>
-                        <th>Email</th>
-                        <td>Contact details hidden</td>
-                    </tr>
                 </table>
                 <div class="contact-request">
                     <?php if (!$existing_request): ?>
                         <form method="POST">
+                        <input type="hidden" name="id" value="<?php echo $id ?>">
                             <button type="submit" name="request_contact" class="btn btn-request">Request Contact Details</button>
                         </form>
                     <?php else: ?>
@@ -243,8 +237,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['request_contact'])) {
             </div>
         </div>
     </main>
-    <footer>
-        <p>&copy; 2024 KOKANI SHAADI.IN . All rights reserved.</p>
+    <footer style="background-color: #CC2B52;">
+        <p>&copy; 2024 KOKANRISHTA.IN . All rights reserved.</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
