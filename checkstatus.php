@@ -47,6 +47,8 @@ $st=$_GET['status'];
                 background-color: #0056b3; /* Darker blue on hover */
             }
         </style>
+        <link rel="icon" href="logo.png" type="image/x-icon">
+     
     </head>
 
     <body>

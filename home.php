@@ -10,6 +10,8 @@ session_start();
 <!doctype html>
 <html lang="en">
     <head>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+     
     <style>
 .card-img-top {
     width: 100%; /* Full width of the card */
