@@ -11,7 +11,8 @@ if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
 
     // Direct password comparison (not recommended for production)
-    if ($_POST['pass'] === $user['password']) {
+    if (password_verify($_POST['pass'], $user['password'])) 
+{
         session_start();
         $_SESSION['email'] = $user['email'];
         $_SESSION["loggedin"] = true;
