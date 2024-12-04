@@ -96,6 +96,7 @@ $result_profiles = mysqli_query($conn, $sql_profiles);
                         </p>
                         <form id="detailsForm" action="psdata.php" method="post" style="display: none;">
     <input type="hidden" name="id" value="<?php echo $profile_row['ProfileID']; ?>">
+    <button type="submit" name="action" value="approve_profile" class="btn btn-primary">View Details</button>
 </form>
                         
                         <form method="POST" class="d-inline">
