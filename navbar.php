@@ -1,5 +1,7 @@
 
-        <nav class="navbar navbar-expand-lg navbar-light">
+       <head><link rel="icon" href="logo.png" type="image/x-icon"></head>
+       
+       <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center ms-4" href="home.php">
                     <img src="images/navlogo.png" class="d-inline-block align-top ms-2" alt="" style="max-height: 20vh;">
