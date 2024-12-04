@@ -143,8 +143,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['request_contact'])) {
         <h1 class="mb-4 text-center">Profile Details</h1>
         <div class="row">
             <div class="col-md-4 text-center">
-                <img src="<?php echo htmlspecialchars($profile['profile_picture']); ?>" alt="Profile Picture" class="img-fluid rounded-circle profile-picture mb-3">
+                <img src="<?php echo htmlspecialchars($profile['profile_picture']); ?>" alt="Profile Picture" class="img-fluid rounded-circle profile-picture mb-3 <?php echo $profile['image_blur'] ? 'blurred' : ''; ?>">
             </div>
+            <style>
+.blurred {
+    filter: blur(5px);
+}
+</style>
             <div class="col-md-8">
                 <h2 
                 style="color:#CC2B52"><?php echo strtoupper(htmlspecialchars($profile['FirstName'] . ' ' . $profile['middlename'] . ' ' . $profile['LastName'])); ?></h2>
