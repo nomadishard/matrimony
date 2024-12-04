@@ -94,7 +94,7 @@ $result_profiles = mysqli_query($conn, $sql_profiles);
                         <p class="card-text">
                             <strong>Name:</strong> <?php echo htmlspecialchars($profile_row['FirstName']); ?><br>
                         </p>
-                        <form id="detailsForm" action="psdata.php" method="post" style="display: none;">
+                        <form id="detailsForm" action="psdata.php" method="post">
     <input type="hidden" name="id" value="<?php echo $profile_row['ProfileID']; ?>">
     <button type="submit" name="action" value="approve_profile" class="btn btn-primary">View Details</button>
 </form>
