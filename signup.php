@@ -177,7 +177,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div class="container form-container mb-5">
   <h2 class="form-title">Personal Information Form</h2>
-  <form class="needs-validation" novalidate method="post" action="#" enctype="multipart/form-data">
+  <form class="needs-validation" novalidate method="post" action="<?php echo $_SERVER['PHP_SELF']?>" enctype="multipart/form-data">
     <div class="form-section">
       <h4 class="form-section-title">Basic Information</h4>
       <div class="row g-3">
