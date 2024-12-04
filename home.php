@@ -142,11 +142,12 @@ session_start();
             $education = $arr['Education'];
             $occupation = $arr['Occupation'];
             $height = $arr['Height'];
+            $image_blur=$arr['image_blur'];
             ?>
 
-            <div class="col-sm-3 d-flex justify-content-center mb-4"> <!-- Adjusted column classes -->
-                <div class="card" style="width: 100%;"> <!-- Set width to 100% for responsive behavior -->
-                    <img src="<?php echo htmlspecialchars($profilePicture); ?>" class="card-img-top" alt="Profile Picture">
+            <div class="col-sm-3 d-flex justify-content-center mb-4">
+                <div class="card" style="width: 100%;"> 
+                    <img src="<?php echo htmlspecialchars($profilePicture); ?>" class="card-img-top <?php echo $image_blur ? 'blurred' : ''; ?>" alt="Profile Picture">
                     <div class="card-body">
                         <h5 class="card-title text-left"><?php echo htmlspecialchars($firstName . ' ' . $lastName); ?></h5>
                         <p class="card-text text-left">
@@ -167,6 +168,11 @@ session_start();
         </svg>
     </button>
 </form>
+<style>
+.blurred {
+    filter: blur(3px);
+}
+</style>
                     </div>
                 </div>
             </div>

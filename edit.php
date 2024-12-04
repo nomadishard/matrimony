@@ -12,8 +12,16 @@ $profile = mysqli_fetch_assoc($result);
 if (!$profile) {
     die("Profile not found");
 }
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Assume $db is your database connection
+   
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $hidePicture = isset($_POST['hide_picture']) ? 1 : 0; // Check if checkbox is checked
+    echo $hidePicture;
+    $sql2="UPDATE profiles SET image_blur = $hidePicture WHERE ProfileID = $id";
+    mysqli_query($conn,$sql2);
 $firstName = trim(htmlspecialchars($_POST['FirstName'] ?? '', ENT_QUOTES, 'UTF-8'));
 $middleName = trim(htmlspecialchars($_POST['middlename'] ?? '', ENT_QUOTES, 'UTF-8'));
 $lastName = trim(htmlspecialchars($_POST['LastName'] ?? '', ENT_QUOTES, 'UTF-8'));
@@ -128,6 +136,8 @@ if ($weight !== false && ($weight < 30 || $weight > 200)) {
             }
         }
     }
+
+   
 }
 
 ?>
@@ -218,13 +228,36 @@ if ($weight !== false && ($weight < 30 || $weight > 200)) {
         ?>
         <form method="POST" enctype="multipart/form-data">
             <div class="row">
-                <div class="col-md-4 text-center">
-                    <img src="<?php echo htmlspecialchars($profile['profile_picture']); ?>" alt="Profile Picture" class="img-fluid rounded-circle profile-picture mb-3">
-                    <div class="mb-3">
-                        <label for="profile_picture" class="form-label">Update Profile Picture</label>
-                        <input type="file" class="form-control" id="profile_picture" name="profile_picture">
-                    </div>
-                </div>
+            <div class="col-md-4 text-center">
+    <img src="<?php echo htmlspecialchars($profile['profile_picture']); ?>" alt="Profile Picture" class="img-fluid rounded-circle profile-picture mb-3 <?php echo $profile['image_blur'] ? 'blurred' : ''; ?>" id="profileImage">
+    
+    <div class="mb-3">
+        <label for="profile_picture" class="form-label">Update Profile Picture</label>
+        <input type="file" class="form-control" id="profile_picture" name="profile_picture">
+    </div>
+    
+    <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="toggleBlur" <?php echo $profile['image_blur'] ? 'checked' : ''; ?> name="hide_picture">
+                <label class="form-check-label" for="toggleBlur">Hide Profile Picture</label>
+            </div>
+</div>
+
+<script>
+document.getElementById('toggleBlur').addEventListener('change', function() {
+    const profileImage = document.getElementById('profileImage');
+    if (this.checked) {
+        profileImage.classList.add('blurred');
+    } else {
+        profileImage.classList.remove('blurred');
+    }
+});
+</script>
+
+<style>
+.blurred {
+    filter: blur(5px);
+}
+</style>
                 <div class="col-md-8">
                     <div class="row">
                         <div class="col-md-4 mb-3">
@@ -261,7 +294,7 @@ if ($weight !== false && ($weight < 30 || $weight > 200)) {
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="Caste" class="form-label">Caste</label>
-                            <input type="text" class="form-control" id="Caste" name="Caste" value="<?php echo htmlspecialchars($profile['Caste']); ?>" required>
+                            <input type="text" class="form-control" id="Caste" name="Caste" value="<?php echo htmlspecialchars($profile['Caste']); ?>">
                         </div>
                     </div>
                     <div class="row">
@@ -320,27 +353,20 @@ if ($weight !== false && ($weight < 30 || $weight > 200)) {
             </div>
         </form>
         <?php 
-        if ($profile['status']==1){
-            echo ' <a
-            name=""
-            id=""
-            class="btn btn-warning"
-            href="deact.php?id='.$id.'"
-            role="button"
-            >Deactivate Profile</a
-        >';
-        }
-        else if ($profile['status']==2){
-            echo ' <a
-            name=""
-            id=""
-            class="btn btn-success"
-            href="act.php?id='.$id.'"
-            role="button"
-            >Activate Profile</a
-        >';
-        }
-        ?>
+if ($profile['status'] == 1) {
+    echo '
+    <form action="deact.php" method="POST" style="display:inline;">
+        <input type="hidden" name="id" value="'.$id.'">
+        <button type="submit" class="btn btn-warning" role="button">Deactivate Profile</button>
+    </form>';
+} else if ($profile['status'] == 2) {
+    echo '
+    <form action="act.php" method="POST" style="display:inline;">
+        <input type="hidden" name="id" value="'.$id.'">
+        <button type="submit" class="btn btn-success" role="button">Activate Profile</button>
+    </form>';
+}
+?>
        
         
     </main>

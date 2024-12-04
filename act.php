@@ -1,6 +1,6 @@
 <?php
 include 'connect.php';
-$id=$_GET['id'];
+$id=$_POST['id'];
 $sql="UPDATE profiles set status=1 WHERE ProfileID=$id";
 mysqli_query($conn,$sql);
 echo"<script>
