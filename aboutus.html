@@ -1,87 +1,163 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>Kokani Rishta - Find Your Perfect Match</title>
-        <!-- Required meta tags -->
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-        <meta property="og:title" content="Kokani Rishta - Find Your Perfect Match">
-        <meta property="og:description" content="Join Kokani Rishta to find your perfect match with verified profiles and advanced matching features. Sign up today!
-        Free For first 100 users">
-        <meta property="og:image" content="KOKAN_CONNECT.png">
-        <link rel="icon" href="logo.png" type="image/x-icon">
+<head>
+    <title>Kokani Rishta - Find Your Perfect Match</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta property="og:title" content="Kokani Rishta - Find Your Perfect Match">
+    <meta property="og:description" content="Join Kokani Rishta to find your perfect match with verified profiles and advanced matching features. Sign up today! Free For first 100 users">
+    <meta property="og:image" content="KOKAN_CONNECT.png">
+    <link rel="icon" href="logo.png" type="image/x-icon">
 
-        <!-- Bootstrap CSS v5.2.1 -->
-         <link rel="stylesheet" href="style2.css">
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
-        />
-        
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link rel="stylesheet" href="style2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     
-    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>/* General Body Styles */
+      body {
+          background-color: #ffffff; /* White background for the entire page */
+          font-family: 'Montserrat', sans-serif; /* Primary font family */
+          color: #333; /* Dark text color for readability */
+          margin: 0;
+          padding: 0;
+      }
+      
+      /* Header Styles */
+      header {
+          background-color: #007BFF; /* Bootstrap primary color */
+      }
+      
+      .navbar-brand img {
+          max-height: 50px; /* Adjust logo size */
+      }
+      
+      /* Main Section Styles */
+      main {
+          background-color: #f9f9f9; /* Light background color for the main section */
+          padding: 40px; /* Adds space around the content */
+          margin: 20px auto; /* Centers the main section */
+          max-width: 800px; /* Limits width for better readability */
+          border-radius: 8px; /* Rounded corners for a softer look */
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+          line-height: 1.6; /* Improves line spacing for better readability */
+      }
+      
+      /* Headings Styles */
+      h1 {
+          font-size: 28px; /* Size for main heading */
+          font-weight: bold; /* Bold text for emphasis */
+          margin-bottom: 20px; /* Space below the heading */
+      }
+      
+      h2 {
+          font-size: 24px; /* Size for subheadings */
+          font-weight: bold; /* Bold text for emphasis */
+          margin-top: 30px; /* Space above subheadings */
+          margin-bottom: 10px; /* Space below subheadings */
+      }
+      
+      /* Paragraph Styles */
+      p {
+          margin-bottom: 15px; /* Space below paragraphs */
+      }
+      
+      /* List Styles */
+      ul {
+          margin-left: 20px; /* Indentation for lists */
+      }
+      
+      ul li {
+          margin-bottom: 10px; /* Space between list items */
+      }
+      
+      /* Link Styles */
+      a {
+          color: #007BFF; /* Link color matching the theme */
+          text-decoration: none; /* Remove underline from links */
+      }
+      
+      a:hover {
+          text-decoration: underline; /* Underline on hover for better visibility */
+      }
+      
+      /* Footer Styles (if needed) */
+      /* You can add footer styles here if you have footer content */
+      
+      footer {
+          background-color: #007BFF; /* Same as header color */
+          color: white;
+          text-align: center;
+          padding: 15px;
+      }</style>
+</head>
 
-    <body>
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container-fluid">
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center ms-4" href="index.html">
                     <img src="images/navlogo.png" class="d-inline-block align-top ms-2" alt="" style="max-height: 20vh;">
                     <span style="font-family: Montserrat, sans-serif; font-weight: 800; font-style: italic; color: white;" class="ms-2">KOKAN RISHTA</span>
                 </a>
-                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                  </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link p-3" href="#" style="font-family: Montserrat, sans-serif;
-                    font-weight: 500;
-                    color: white;">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link p-3" href="#"  style="font-family: Montserrat, sans-serif;
-                    font-weight: 500;
-                    color: white;">About Us</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link p-3" href="login.html"  style="font-family: Montserrat, sans-serif;
-                    font-weight: 500;
-                    color: white;">Login</a>
-                  </li>
-                </ul>
-              </div>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link p-3" href="index.html" style="font-family: Montserrat, sans-serif; font-weight: 500; color: white;">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-3" href="#" style="font-family: Montserrat, sans-serif; font-weight: 500; color: white;">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-3" href="login.html" style="font-family: Montserrat, sans-serif; font-weight: 500; color: white;">Login</a>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
-        </header>
-        <main></main>
-        <footer>
-            <!-- place footer here -->
-        </footer>
-        <!-- Bootstrap JavaScript Libraries -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-            crossorigin="anonymous"
-        ></script>
+            </div>
+        </nav>
+    </header>
 
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    <main>
+        <h1>Welcome to kokanrishta.in</h1>
+
+        <p>At kokanrishta.in, we are dedicated to creating a vibrant and supportive online community for Muslims in the Kokan region seeking meaningful relationships. Our platform is designed to facilitate connections that are rooted in shared values, traditions, and cultural heritage.</p>
+
+        <h2>Our Mission</h2>
+        <p>Our mission is to provide a safe and user-friendly space for individuals to find their life partners. We understand the importance of community, family, and cultural compatibility in building lasting relationships. By focusing on the Konkani Muslim community, we aim to bridge the gap between tradition and modernity, helping you find a partner who resonates with your beliefs and lifestyle.</p>
+
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li><strong>Free Registration for Early Users:</strong> To encourage participation, we offer free registration for our first few users. Join us now and take advantage of this exclusive opportunity!</li>
+            <li><strong>Privacy and Security:</strong> We prioritize your privacy and security. Our platform employs robust measures to protect your personal information while allowing you to connect with potential partners confidently.</li>
+            <li><strong>Diverse Profiles:</strong> Our user base includes individuals from various professions, backgrounds, and interests, providing you with a wide array of options as you search for your ideal match.</li>
+        </ul>
+
+        <h2>Our Vision</h2>
+        <p>We envision a world where individuals can find love and companionship in a manner that respects their cultural values. At kokanrishta.in, we believe that every person deserves the chance to connect with someone special, and we are here to make that journey easier and more fulfilling.</p>
+
+        <h2>Join Us Today!</h2>
+        <p>We invite you to explore our platform and become part of our growing community. Whether you are looking for a serious commitment or simply want to meet new people, kokanrishta.in is here to support you every step of the way.</p>
+
+        <p>Visit us at <a href="index.html">kokanrishta.in</a> and start your journey towards finding your perfect match today!</p>
+    </main>
+
+    <footer>
+        <!-- place footer here -->
+    </footer>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-            crossorigin="anonymous"
-        ></script>
-    </body>
+            crossorigin="anonymous"></script>
+</body>
 </html>
