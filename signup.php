@@ -301,7 +301,7 @@ function validateAge() {
       <div class="row g-3">
         <div class="col-md-4">
           <label for="contactNumber" class="form-label">Contact Number</label>
-          <input type="tel" class="form-control" id="contactNumber" required name="contactNumber">
+          <input type="tel" class="form-control" id="contactNumber" required name="contactNumber" maxlength="10">
           <div class="invalid-feedback">Please provide a valid contact number.</div>
         </div>
         <div class="col-md-4">
