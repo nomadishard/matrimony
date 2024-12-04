@@ -1,5 +1,4 @@
 
-       <head><link rel="icon" href="logo.png" type="image/x-icon"></head>
        
        <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">

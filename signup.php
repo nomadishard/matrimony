@@ -35,12 +35,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Prepare SQL statement
-    $sql = "INSERT INTO profiles (firstName, middlename, lastName, Gender, dob, Religion, Caste, MaritalStatus, Height, Weight, Education, Occupation, ContactNumber, Email, currentaddress, permanentaddress, profile_picture, expectation,password) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+    $sql = "INSERT INTO profiles (firstName, middlename, lastName, Gender, dob, Religion, Caste, MaritalStatus, Height, Weight, Education, Occupation, ContactNumber, Email, currentaddress, permanentaddress, profile_picture, expectation,password,status,image_blur,admin) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?)";
 
     // Prepare and bind
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssssssssddsssssssss", $firstName, $middleName, $lastName, $gender, $dob, $religion, $caste, $maritalStatus, $height, $weight, $education, $occupation, $contactNumber, $email, $currentAddress, $permanentAddress, $profilePicture, $expectations,$pass);
+    $stmt->bind_param("ssssssssddsssssssssiii", $firstName, $middleName, $lastName, $gender, $dob, $religion, $caste, $maritalStatus, $height, $weight, $education, $occupation, $contactNumber, $email, $currentAddress, $permanentAddress, $profilePicture, $expectations,$pass,0,0,0);
 
     // Execute the statement
     if ($stmt->execute()) {
