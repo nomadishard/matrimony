@@ -19,7 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $occupation = mysqli_real_escape_string($conn, $_POST['occupation']);
     $contactNumber = mysqli_real_escape_string($conn, $_POST['contactNumber']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = password_hash($_POST['pass'], PASSWORD_DEFAULT); // Hashing the password
+    $password = password_hash($_POST['pass'],PASSWORD_DEFAULT);
+     // Hashing the password
     $currentAddress = mysqli_real_escape_string($conn, $_POST['currentAddress']);
     $permanentAddress = mysqli_real_escape_string($conn, $_POST['permanentAddress']);
     $expectations=mysqli_real_escape_string($conn,$_POST['expectations']);
@@ -64,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo '<script>
                alert("Profile NOT created");
-               window.location.href ="signup.php";
+               window.location.href ="index.html";
               </script>';
     }
 
