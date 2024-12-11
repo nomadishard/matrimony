@@ -58,10 +58,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['token'])) {
     
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        
+        $haspass=password_hash($password,PASSWORD_DEFAULT);
         // Update user password
         $stmt = $conn->prepare("UPDATE profiles SET password = ? WHERE email = ?");
-        $stmt->bind_param("ss", $password, $row['email']);
+        $stmt->bind_param("ss", $haspass, $row['email']);
         
         if ($stmt->execute()) {
             echo "<script>
