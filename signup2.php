@@ -64,6 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo '<script>
                alert("Profile NOT created");
+               window.location.href ="signup.php";
               </script>';
     }
 

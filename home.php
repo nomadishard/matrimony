@@ -190,7 +190,7 @@ session_start();
         </main>
         <footer>
             <p style="background: #72001F;color: white;padding-bottom: 0px;margin-bottom: 0px;text-align: center;
-">&copy; 2024 KOKANRISHTA.IN . All rights reserved.</p>
+">&copy; 2024 KOKANIRISHTA.IN . All rights reserved.</p>
         </footer>
         <!-- Bootstrap JavaScript Libraries -->
         <script

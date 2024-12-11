@@ -28,7 +28,7 @@ include 'connect.php';
     <nav class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand d-flex align-items-center ms-4" href="index.html">
         <img src="images/navlogo.png" class="d-inline-block align-top ms-2" alt="" style="max-height: 20vh;">
-        <span style="font-family: Montserrat, sans-serif; font-weight: 800; font-style: italic; color: white;" class="ms-2">KOKAN RISHTA</span>
+        <span style="font-family: Montserrat, sans-serif; font-weight: 800; font-style: italic; color: white;" class="ms-2">KOKANI RISHTA</span>
       </a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -357,7 +357,7 @@ include 'connect.php';
   </main>
   <footer class="footer">
     <p style="background: #72001F;color: white;padding-bottom: 0px;margin-bottom: 0px;text-align: center;
-">&copy; 2024 KOKANRISHTA.IN . All rights reserved.</p>
+">&copy; 2024 KOKANIRISHTA.IN . All rights reserved.</p>
   </footer>
   <!-- Bootstrap JavaScript Libraries -->
   <script
