@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $mail->Password   = 'wmfhzrywbdsfjzcy'; 
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
-        $mail->setFrom('fondesthorse11@gmail.com', 'Kokan Match');
+        $mail->setFrom('fondesthorse11@gmail.com', 'Kokani Rishta');
         $mail->addAddress($email);
         $mail->isHTML(true);
         $mail->Subject = 'Password Reset Request';
