@@ -68,7 +68,7 @@ $st=$_GET['status'];
 </section>
 ';
         }
-        else if($st==1){
+        else if($st==1 || $st==2){
             header("location:home.php");
         }
         ?>
