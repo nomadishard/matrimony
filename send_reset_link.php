@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $mail->addAddress($email);
         $mail->isHTML(true);
         $mail->Subject = 'Password Reset Request';
-        $mail->Body = "Click this link to reset your password: http://kokanrishta.in/reset_password.php?token=$token";
+        $mail->Body = "Click this link to reset your password: http://kokanirishta.in/reset_password.php?token=$token";
         
         if ($mail->send()) {
             echo "<script>
