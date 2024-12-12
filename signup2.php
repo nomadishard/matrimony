@@ -35,14 +35,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </script>';
     } else {
     // Handle file upload for profile picture
-    if (isset($_FILES['profilePicture']) && $_FILES['profilePicture']['error'] == 0) {
-        $targetDir = "uploads/"; // Specify your upload directory
-        $targetFile = $targetDir . basename($_FILES["profilePicture"]["name"]);
-        move_uploaded_file($_FILES["profilePicture"]["tmp_name"], $targetFile);
-        $profilePicturePath = mysqli_real_escape_string($conn, $targetFile);
+    if (isset($_POST['croppedImage'])) {
+        // Get the Data URL from the POST request
+        $dataUrl = $_POST['croppedImage'];
+    
+        // Check if the Data URL is valid
+        if (preg_match('/^data:image\/(\w+);base64,/', $dataUrl, $type)) {
+            // Remove the header from the Data URL
+            $data = substr($dataUrl, strpos($dataUrl, ',') + 1);
+            $type = strtolower($type[1]); // jpg, png, gif
+    
+            // Decode the base64 data
+            if (!in_array($type, ['jpg', 'jpeg', 'png', 'gif'])) {
+                throw new \Exception('Invalid type');
+            }
+    
+            $data = base64_decode($data);
+            if ($data === false) {
+                throw new \Exception('Base64 decode failed');
+            }
+    
+            // Specify your upload directory
+            $targetDir = "uploads/";
+            // Generate a unique filename to prevent overwriting
+            $fileName = uniqid() . '.' . $type;
+            $targetFile = $targetDir . $fileName;
+    
+            // Save the image file
+            if (file_put_contents($targetFile, $data) !== false) {
+                // Successfully saved the file
+                $profilePicturePath = mysqli_real_escape_string($conn, $targetFile);
+                echo json_encode(['success' => true, 'path' => $profilePicturePath]);
+            } else {
+                echo json_encode(['success' => false, 'message' => 'Failed to save image.']);
+            }
+        } else {
+            echo json_encode(['success' => false, 'message' => 'Invalid data URL.']);
+        }
     } else {
-        // Set a default image or handle error
-        $profilePicturePath = null; // Or set a default image path
+        echo json_encode(['success' => false, 'message' => 'No image data received.']);
     }
 
     // SQL query to insert data into profiles table

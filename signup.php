@@ -290,11 +290,19 @@ include 'connect.php';
     </div>
     <button id="cropButton" style="display: none;">Crop Image</button>
     <canvas id="croppedCanvas" style="display: none;"></canvas>
+    <input type="hidden" name="croppedImage" id="croppedImage">
 
+    <button id="uploadButton" style="display: none;">Upload Cropped Image</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" />
+    
     <script>
         let cropper;
         const imagePreview = document.getElementById('imagePreview');
         const cropButton = document.getElementById('cropButton');
+        const uploadButton = document.getElementById('uploadButton');
+        const croppedImageInput = document.getElementById('croppedImage');
 
         document.getElementById('profilePicture').addEventListener('change', function(event) {
             const file = event.target.files[0];
@@ -311,9 +319,10 @@ include 'connect.php';
                         cropper.destroy();
                     }
                     cropper = new Cropper(imagePreview, {
-                        aspectRatio: 1, // Adjust aspect ratio as needed
-                        viewMode: 1,
-                        autoCropArea: 1,
+    aspectRatio: 16 / 9, // Set the aspect ratio to 16:9 for a wider frame
+    viewMode: 1, // Restricts the crop box to not exceed the canvas size
+    autoCropArea: 1, // Automatically crops to the full area of the image
+    initialAspectRatio: 16 / 9,
                     });
 
                     cropButton.style.display = 'block'; // Show the crop button
@@ -324,6 +333,7 @@ include 'connect.php';
                 imagePreview.src = '#';
                 imagePreview.style.display = 'none';
                 cropButton.style.display = 'none'; // Hide the crop button
+                uploadButton.style.display = 'none'; // Hide the upload button
             }
         });
 
@@ -331,12 +341,37 @@ include 'connect.php';
             const canvas = cropper.getCroppedCanvas();
             document.getElementById('croppedCanvas').style.display = 'block';
             document.getElementById('croppedCanvas').getContext('2d').drawImage(canvas, 0, 0);
-            // Optionally convert canvas to an image or handle it as needed
+
+            // Convert the canvas to a Data URL and set it in the hidden input
             const croppedImageDataUrl = canvas.toDataURL();
-            console.log(croppedImageDataUrl); // You can use this data URL as needed
+            croppedImageInput.value = croppedImageDataUrl; // Store Data URL for uploading
+
+            uploadButton.style.display = 'block'; // Show the upload button
+        });
+
+        uploadButton.addEventListener('click', function() {
+            // Create a FormData object to send the cropped image
+            const formData = new FormData();
+            formData.append('croppedImage', croppedImageInput.value);
+
+            // Send the data using fetch or XMLHttpRequest
+            fetch('/upload-endpoint', { // Replace with your server endpoint
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                alert('Image uploaded successfully!');
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('Error uploading image.');
+            });
         });
     </script>
 </div>
+
 
 
         <div class="form-section">
