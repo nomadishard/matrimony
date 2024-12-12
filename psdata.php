@@ -161,9 +161,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['request_contact'])) {
                         <td><?php echo htmlspecialchars($profile['Gender']); ?></td>
                     </tr>
                     <tr>
-                        <th>Date of Birth</th>
-                        <td><?php echo htmlspecialchars($profile['dob']); ?></td>
-                    </tr>
+    <th>Age</th>
+    <td>
+        <?php
+        // Assuming $profile['dob'] is in 'YYYY-MM-DD' format
+        $dob = new DateTime($profile['dob']);
+        $today = new DateTime('today');
+        $age = $dob->diff($today)->y; // Calculate age in years
+        echo htmlspecialchars($age);
+        ?>
+    </td>
+</tr>
+
                     <tr>
                         <th>Religion</th>
                         <td><?php echo htmlspecialchars($profile['Religion']); ?></td>
