@@ -20,11 +20,6 @@ include 'connect.php';
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
     crossorigin="anonymous" />
   <link rel="icon" href="logo.png" type="image/x-icon">
-  <!-- Include Cropper.js CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" />
-
-<!-- Include Cropper.js JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
 
 </head>
 
@@ -279,65 +274,37 @@ include 'connect.php';
         </div>
 
         <div class="form-section">
-    <h4 class="form-section-title">Profile Picture</h4>
-    <div>
-        <label for="profilePicture" class="form-label">Upload Picture</label>
-        <input type="file" class="form-control" id="profilePicture" accept="image/*" required name="profilePicture">
-        <div class="invalid-feedback">Please upload a profile picture.</div>
-    </div>
-    <div class="mt-3">
-        <img id="imagePreview" src="#" alt="Image Preview" style="max-width: 200px; display: none;">
-    </div>
-    <button id="cropButton" style="display: none;">Crop Image</button>
-    <canvas id="croppedCanvas" style="display: none;"></canvas>
+          <h4 class="form-section-title">Profile Picture</h4>
+          <div>
+            <label for="profilePicture" class="form-label">Upload Picture</label>
+            <input type="file" class="form-control" id="profilePicture" accept="image/*" required name="profilePicture">
+            <div class="invalid-feedback">Please upload a profile picture.</div>
+          </div>
+          <div class="mt-3">
+            <img id="imagePreview" src="#" alt="Image Preview" style="max-width: 200px; display: none;">
+          </div>
 
-    <script>
-        let cropper;
-        const imagePreview = document.getElementById('imagePreview');
-        const cropButton = document.getElementById('cropButton');
+          <script>
+            document.getElementById('profilePicture').addEventListener('change', function(event) {
+              var file = event.target.files[0];
+              var imagePreview = document.getElementById('imagePreview');
 
-        document.getElementById('profilePicture').addEventListener('change', function(event) {
-            const file = event.target.files[0];
-
-            if (file) {
-                const reader = new FileReader();
+              if (file) {
+                var reader = new FileReader();
 
                 reader.onload = function(e) {
-                    imagePreview.src = e.target.result;
-                    imagePreview.style.display = 'block';
-
-                    // Initialize Cropper.js
-                    if (cropper) {
-                        cropper.destroy();
-                    }
-                    cropper = new Cropper(imagePreview, {
-                        aspectRatio: 1, // Adjust aspect ratio as needed
-                        viewMode: 1,
-                        autoCropArea: 1,
-                    });
-
-                    cropButton.style.display = 'block'; // Show the crop button
+                  imagePreview.src = e.target.result;
+                  imagePreview.style.display = 'block';
                 }
 
                 reader.readAsDataURL(file);
-            } else {
+              } else {
                 imagePreview.src = '#';
                 imagePreview.style.display = 'none';
-                cropButton.style.display = 'none'; // Hide the crop button
-            }
-        });
-
-        cropButton.addEventListener('click', function() {
-            const canvas = cropper.getCroppedCanvas();
-            document.getElementById('croppedCanvas').style.display = 'block';
-            document.getElementById('croppedCanvas').getContext('2d').drawImage(canvas, 0, 0);
-            // Optionally convert canvas to an image or handle it as needed
-            const croppedImageDataUrl = canvas.toDataURL();
-            console.log(croppedImageDataUrl); // You can use this data URL as needed
-        });
-    </script>
-</div>
-
+              }
+            });
+          </script>
+        </div>
 
         <div class="form-section">
           <h4 class="form-section-title">Expectations</h4>
