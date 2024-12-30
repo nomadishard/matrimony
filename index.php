@@ -3,20 +3,28 @@
 include 'connect.php';
 if (isset($_COOKIE['remember_me'])) {
     $token = $_COOKIE['remember_me'];
-    $sql="select * from profiles where token = $token";
-    $res=mysqli_query($conn,$sql);
-    $user=mysqli_fetch_array($res);
-        // Log the user in by setting session variables
-        $_SESSION['email'] = $user['email'];
-        $_SESSION["loggedin"] = true;
-        $_SESSION['username'] = $user['FirstName'];
-        $_SESSION['user_id'] = $user['ProfileID'];
-        $_SESSION['gender']=$user['Gender'];
-        $st=$user['status'];
-        $_SESSION['status']=$st;
-        $_SESSION['role']=$user['admin'];
-        header("location: home.php");
-        exit();
+    $sql = $conn->prepare("SELECT * FROM profiles WHERE token = ?");
+    $sql->bind_param("s", $token); // Bind the token parameter
+
+    // Execute the query
+    if ($sql->execute()) {
+        $res = $sql->get_result(); // Get the result set from the executed statement
+        $user = $res->fetch_assoc(); // Fetch the user data as an associative array
+
+        // Check if a user was found
+        if ($user) {
+            // Log the user in by setting session variables
+            $_SESSION['email'] = $user['email'];
+            $_SESSION["loggedin"] = true;
+            $_SESSION['username'] = $user['FirstName'];
+            $_SESSION['user_id'] = $user['ProfileID'];
+            $_SESSION['gender'] = $user['Gender'];
+            $_SESSION['status'] = $user['status'];
+            $_SESSION['role'] = $user['admin'];
+
+            // Redirect to home.php
+            header("Location: home.php");
+            exit();}}
     }
 
 ?>
