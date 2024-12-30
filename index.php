@@ -2,13 +2,10 @@
 
 include 'connect.php';
 if (isset($_COOKIE['remember_me'])) {
-    echo 'dud';
     $token = $_COOKIE['remember_me'];
     $sql="select * from profiles where token = $token";
     $res=mysqli_query($conn,$sql);
     $user=mysqli_fetch_array($res);
-    
-    if ($user_id) {
         // Log the user in by setting session variables
         $_SESSION['email'] = $user['email'];
         $_SESSION["loggedin"] = true;
@@ -21,7 +18,7 @@ if (isset($_COOKIE['remember_me'])) {
         header("location: home.php");
         exit();
     }
-}
+
 ?>
 
 
