@@ -12,19 +12,20 @@ if ($result->num_rows > 0) {
 
     // Direct password comparison (not recommended for production)
     if (password_verify($_POST['pass'], $user['password'])) 
-{       session_set_cookie_params(60 * 60 * 24 * 7);
-    // Generate a unique token
-$token = bin2hex(random_bytes(16)); // Generate a random token
-setcookie("remember_me", $token, time() + (60 * 60 * 24 * 7), "/"); // Cookie lasts for 7 days
-$sql=$conn->prepare("Insert into profiles (token) VALUES (?) Where email = ?");
-$sql->bind_param("ss",$token,$_POST['email']);
-$sql->execute();
+{      
 
 
 // Store the token in the database associated with the user ID
 // Example SQL: INSERT INTO users (user_id, token) VALUES (?, ?)
 
         session_start();
+        session_set_cookie_params(60 * 60 * 24 * 7);
+        // Generate a unique token
+    $token = bin2hex(random_bytes(16)); // Generate a random token
+    setcookie("remember_me", $token, time() + (60 * 60 * 24 * 7), "/"); // Cookie lasts for 7 days
+    $sql=$conn->prepare("Insert into profiles (token) VALUES (?) Where email = ?");
+    $sql->bind_param("ss",$token,$_POST['email']);
+    $sql->execute();
         $_SESSION['email'] = $user['email'];
         $_SESSION["loggedin"] = true;
         $_SESSION['username'] = $user['FirstName'];
