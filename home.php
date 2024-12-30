@@ -8,7 +8,7 @@ function calculateAge($dob) {
 session_start();
 if ($_SESSION['status']==2){
     echo '<script>alert("Please Activate Your Profile first ");
-    window.loaction.href="edit.php"; </script>';
+    window.location.href="edit.php"; </script>';
 }
 ?>
 <!doctype html>
