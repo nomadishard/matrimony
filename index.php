@@ -2,6 +2,7 @@
 
 include 'connect.php';
 if (isset($_COOKIE['remember_me'])) {
+    echo 'dud';
     $token = $_COOKIE['remember_me'];
     $sql="select * from profiles where token = $token";
     $res=mysqli_query($conn,$sql);
