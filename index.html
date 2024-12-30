@@ -1,3 +1,20 @@
+<?php 
+
+
+if (isset($_COOKIE['remember_me'])) {
+    $token = $_COOKIE['remember_me'];
+    // Query your database to find a matching user ID for this token
+    // Example SQL: SELECT user_id FROM users WHERE token = ?
+    
+    if ($user_id) {
+        // Log the user in by setting session variables
+        $_SESSION['user_id'] = $user_id;
+    }
+}
+?>
+
+
+
 <!doctype html>
 <html lang="en">
     <head>
