@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
         // Generate a unique token
     $token = bin2hex(random_bytes(16)); // Generate a random token
     setcookie("remember_me", $token, time() + (60 * 60 * 24 * 7), "/"); // Cookie lasts for 7 days
-    $sql=$conn->prepare("Insert into profiles (token) VALUES (?) Where email = ?");
+    $sql=$conn->prepare("Insert into profiles (token) VALUES (?) Where Email = ?");
     $sql->bind_param("ss",$token,$_POST['email']);
     $sql->execute();
         $_SESSION['email'] = $user['email'];
