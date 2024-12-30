@@ -63,7 +63,7 @@ $st=$_GET['status'];
     <div class="message-container w-50 mt-5 container" style="margin: 0 auto;">
         <h1>Profile Under Verification</h1>
         <p>Your profile is currently under verification. Please check back later.</p>
-        <a href="index.html">Go to Home</a>
+        <a href="index.php">Go to Home</a>
     </div>
 </section>
 ';

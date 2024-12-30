@@ -69,7 +69,7 @@ if (isset($_COOKIE['remember_me'])) {
         <header>
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
-                <a class="navbar-brand d-flex align-items-center ms-4" href="index.html">
+                <a class="navbar-brand d-flex align-items-center ms-4" href="index.php">
                     <img src="images/navlogo.png" class="d-inline-block align-top ms-2" alt="" style="max-height: 20vh;">
                     <span style="font-family: Montserrat, sans-serif; font-weight: 800; font-style: italic; color: white;" class="ms-2">KOKANI RISHTA</span>
                 </a>

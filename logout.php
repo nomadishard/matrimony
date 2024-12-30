@@ -8,7 +8,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"]!=true){
 session_destroy(); // Destroy session data
 setcookie("remember_me", "", time() - 3600, "/"); // Expire the cookie
 session_destroy();
-header("location: index.html");
+header("location: index.php");
 
 
 
