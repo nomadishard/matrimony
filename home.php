@@ -10,6 +10,8 @@ if ($_SESSION['status']==2){
     echo '<script>alert("Please Activate Your Profile first ");
     window.location.href="edit.php"; </script>';
 }
+
+
 ?>
 <!doctype html>
 <html lang="en">
