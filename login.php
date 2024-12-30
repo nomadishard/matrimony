@@ -20,6 +20,7 @@ if ($result->num_rows > 0) {
         $_SESSION['user_id'] = $user['ProfileID'];
         $_SESSION['gender']=$user['Gender'];
         $st=$user['status'];
+        $_SESSION['status']=$st;
         $_SESSION['role']=$user['admin'];
         header("location:checkstatus.php?status=$st");
     } else {
