@@ -2,7 +2,7 @@
        
        <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
-                <a class="navbar-brand d-flex align-items-center ms-4" href="home.php">
+                <a class="navbar-brand d-flex align-items-center ms-4" href="../home/">
                     <img src="images/navlogo.png" class="d-inline-block align-top ms-2" alt="" style="max-height: 20vh;">
                     <span style="font-family: Montserrat, sans-serif; font-weight: 800; font-style: italic; color: white;" class="ms-2">KOKANI RISHTA</span>
                 </a>
@@ -13,12 +13,12 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto" style="align-items: center;">
                   <li class="nav-item active">
-                    <a class="nav-link p-3" href="home.php" style="font-family: Montserrat, sans-serif;
+                    <a class="nav-link p-3" href="../home/" style="font-family: Montserrat, sans-serif;
                     font-weight: 500;
                     color: white;">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link p-3" href="aboutus.html"  style="font-family: Montserrat, sans-serif;
+                    <a class="nav-link p-3" href="../aboutus.html"  style="font-family: Montserrat, sans-serif;
                     font-weight: 500;
                     color: white;">About Us</a>
                   </li>
@@ -36,8 +36,8 @@
           <?php echo $name . ' ' . $name2; ?>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a href="edit.php" class="dropdown-item">Edit Profile</a></li>
-            <li><a href="logout.php" class="dropdown-item">LOGOUT</a></li>
+            <li><a href="../edit/" class="dropdown-item">Edit Profile</a></li>
+            <li><a href="../logout.php" class="dropdown-item">LOGOUT</a></li>
           </ul>
         </li>
                 </ul>

@@ -23,7 +23,7 @@ if (isset($_COOKIE['remember_me'])) {
             $_SESSION['role'] = $user['admin'];
 
             // Redirect to home.php
-            header("Location: home.php");
+            header("Location: home/");
             exit();}}
     }
 
@@ -69,7 +69,7 @@ if (isset($_COOKIE['remember_me'])) {
         <header>
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
-                <a class="navbar-brand d-flex align-items-center ms-4" href="index.php">
+                <a class="navbar-brand d-flex align-items-center ms-4" href="#">
                     <img src="images/navlogo.png" class="d-inline-block align-top ms-2" alt="" style="max-height: 20vh;">
                     <span style="font-family: Montserrat, sans-serif; font-weight: 800; font-style: italic; color: white;" class="ms-2">KOKANI RISHTA</span>
                 </a>
@@ -90,7 +90,7 @@ if (isset($_COOKIE['remember_me'])) {
                     color: white;">About Us</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link p-3" href="login.html"  style="font-family: Montserrat, sans-serif;
+                    <a class="nav-link p-3" href="login/"  style="font-family: Montserrat, sans-serif;
                     font-weight: 500;
                     color: white;">Login</a>
                   </li>
@@ -116,7 +116,7 @@ if (isset($_COOKIE['remember_me'])) {
                     name=""
                     id=""
                     class="gs"
-                    href="signup.php"
+                    href="signup/"
                     role="button"
                     >GET STARTED
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">

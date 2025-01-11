@@ -1,6 +1,6 @@
 <?php
 // Include the database connection file
-include 'connect.php';
+include '../connect.php';
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
     // Handle file upload for profile picture
     if (isset($_FILES['profilePicture']) && $_FILES['profilePicture']['error'] == 0) {
-        $targetDir = "uploads/"; // Specify your upload directory
+        $targetDir = "../uploads/"; // Specify your upload directory
         $targetFile = $targetDir . basename($_FILES["profilePicture"]["name"]);
         move_uploaded_file($_FILES["profilePicture"]["tmp_name"], $targetFile);
         $profilePicturePath = mysqli_real_escape_string($conn, $targetFile);
@@ -60,12 +60,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_query($conn, $sql)) {
         echo '<script>
                 alert("Profile created successfully");
-                window.location.href ="login.html";
+                window.location.href ="../login/";
               </script>';
     } else {
         echo '<script>
                alert("Profile NOT created");
-               window.location.href ="index.php";
+               window.location.href ="../";
               </script>';
     }
 
