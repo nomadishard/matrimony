@@ -69,7 +69,7 @@ $st=$_SESSION['status'];
 </section>
 ';
         }
-        else if($st==1 || $st==2){
+        else if($st==1 || $st==2 || $st==3){
             header("location:../home/");
         }
         ?>
