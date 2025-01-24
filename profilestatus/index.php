@@ -70,7 +70,8 @@ $st=$_SESSION['status'];
 ';
         }
         else if($st==1 || $st==2 || $st==3){
-            header("location:../home/");
+            echo '<script>window.location.href = "../home/";
+</script>';
         }
         ?>
 

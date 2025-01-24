@@ -44,19 +44,20 @@
               </div>
                 </div>
             </nav>
-
-
-
-
-
-
-
-
-
-        <style>.navbar{
-          background-color: #CC2B52;
-        }</style>
         <style>
 .navbar {
     background-color: #CC2B52;
 }
+
+@media (max-width: 362px) {
+    .navbar-nav {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+    .nav-link {
+        padding: 10px 15px; /* Adjust padding for better spacing */
+        width: 100%; /* Make links full width */
+        text-align: left; /* Align text to the left */
+    }
+}
+</style>
