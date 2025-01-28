@@ -1,5 +1,5 @@
 <?php
-include '../connect.php';
+include 'connect.php';
 session_start();
 $id = $_POST['id'];
 $sql = "SELECT * FROM profiles WHERE ProfileID = ?";
