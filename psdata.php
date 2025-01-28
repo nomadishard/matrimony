@@ -202,32 +202,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['request_contact'])) {
                         <td><?php echo htmlspecialchars($profile['Occupation']); ?></td>
                     </tr>
                 </table>
-                <div class="contact-request">
-                    <?php if (!$existing_request): ?>
-                        <form method="POST">
-                        <input type="hidden" name="id" value="<?php echo $id ?>">
-                            <button type="submit" name="request_contact" class="btn btn-request">Request Contact Details</button>
-                        </form>
-                    <?php else: ?>
-                        <div class="request-status">
-                            <?php
-                            switch ($existing_request['status']) {
-                                case 'pending':
-                                    echo "Your request is pending admin approval.";
-                                    break;
-                                case 'approved':
-                                    echo "Your request has been approved. Contact details: <br>";
+                <?php
                                     echo "Phone: " . htmlspecialchars($profile['ContactNumber']) . "<br>";
-                                    echo "Email: " . htmlspecialchars($profile['Email']);
-                                    break;
-                                case 'rejected':
-                                    echo "Your request has been rejected.";
-                                    break;
-                            }
-                            ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
+                                    echo "Email: " . htmlspecialchars($profile['Email']);?>
             </div>
         </div>
         <div class="row mt-4">
