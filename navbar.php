@@ -40,23 +40,25 @@
 <style>
 .navbar {
     background-color: #CC2B52;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    white-space: nowrap; /* Prevent wrapping */
 }
 
-.navbar-nav {
-    white-space: nowrap; /* Prevents wrapping */
+.navbar-brand {
+    display: flex; /* Ensure brand elements align in a row */
+    align-items: center; /* Center logo and text vertically */
 }
 
 .nav-link {
-    padding: 10px 15px; /* Adjust padding for better spacing */
+    padding: 5px 10px; /* Reduce padding for better fit */
 }
 
-@media (max-width: 362px) {
+@media (max-width: 345px) {
     .navbar-nav {
-        flex-direction: row; /* Keep items in a single line */
-        align-items: center; /* Align items vertically centered */
-    }
-    .nav-link {
-        padding: 5px 10px; /* Reduce padding for smaller screens */
+        overflow-x: auto; /* Allow horizontal scrolling if necessary */
+        flex-wrap: nowrap; /* Prevent wrapping of nav items */
     }
 }
 </style>
+
