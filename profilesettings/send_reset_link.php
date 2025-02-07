@@ -3,6 +3,8 @@ require '../connect.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
@@ -27,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
             $mail->Username   = 'fondesthorse11@gmail.com'; // Your Gmail address
-            $mail->Password   = 'wmfhzrywbdsfjzcy';  // Use an App Password!
+            $mail->Password   = 'mluyywhzombggwtb';  // Use an App Password!
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port       = 587;
 
