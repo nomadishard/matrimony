@@ -11,7 +11,7 @@ $profile = mysqli_fetch_assoc($result);
 
 if (!$profile) {
     echo "Profile not found";
-    header("location : ../logout.php");
+    header("location : ../login/");
 
 }
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

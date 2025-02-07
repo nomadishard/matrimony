@@ -10,7 +10,9 @@ $result = mysqli_stmt_get_result($stmt);
 $profile = mysqli_fetch_assoc($result);
 
 if (!$profile) {
-    die("Profile not found");
+    echo '<script>
+    alert("Profile not found");</script>';
+    header("location:../home/");
 }
 
 // Check if the user has already requested contact details
