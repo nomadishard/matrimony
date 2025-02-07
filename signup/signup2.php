@@ -60,8 +60,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_query($conn, $sql)) {
         echo '<script>
                 alert("Profile created successfully");
-                window.location.href ="../login/";
               </script>';
+              $token = bin2hex(random_bytes(16));
+              session_set_cookie_params([
+                'lifetime' => 60 * 60 * 24 * 7,
+                'path' => '/',
+                'secure' => true,  // HTTPS only
+                'httponly' => true // Prevent JavaScript access
+            ]);
+            session_start();
+        
+            // Set remember me cookie
+            setcookie("remember_me", $token, [
+                'expires' => time() + (60 * 60 * 24 * 7),
+                'path' => '/',
+                'secure' => true,
+                'httponly' => true,
+                'samesite' => 'Strict' // CSRF protection
+            ]);
+            $sql3 = $conn->prepare("UPDATE profiles SET token = ? WHERE Email = ?");
+            $sql3->bind_param("ss", $token, $email);
+            $sql3->execute();
+            $sql2=$conn->prepare("select ProfileID from profiles WHERE Email=?");
+            $sql2->bind_param("s",$email);
+            $sql2->execute();
+            $result = $sql2->get_result();
+            $row = $result->fetch_assoc();
+            $pfid= $row["ProfileID"];
+            $_SESSION['email'] = $email;
+            $_SESSION['loggedin'] = true;
+            $_SESSION['username'] = $firstName;
+            $_SESSION['user_id'] = $pfid;
+            $_SESSION['gender'] = $gender;
+            $_SESSION['status'] = 0;
+            header("location:../profilestatus/");
     } else {
         echo '<script>
                alert("Profile NOT created");

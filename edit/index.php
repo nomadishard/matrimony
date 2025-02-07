@@ -10,7 +10,9 @@ $result = mysqli_stmt_get_result($stmt);
 $profile = mysqli_fetch_assoc($result);
 
 if (!$profile) {
-    die("Profile not found");
+    echo "Profile not found";
+    header("location : ../logout.php");
+
 }
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Assume $db is your database connection
