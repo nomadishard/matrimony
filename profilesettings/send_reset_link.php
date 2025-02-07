@@ -2,7 +2,7 @@
 require '../connect.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
