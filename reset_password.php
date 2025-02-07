@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['token'])) {
         if ($stmt->execute()) {
             echo "<script>
             alert('Password Reset successfully!');
-            window.location.href = 'login.html';
+            window.location.href = '/login/';
           </script>";
         } else {
             echo "Error updating password.";
