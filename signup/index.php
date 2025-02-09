@@ -25,35 +25,37 @@ include '../connect.php';
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand d-flex align-items-center" href="../">
-        <img src="../images/navlogo.png" class="d-inline-block align-top" alt="" style="max-height: 20vh;">
-        <span style="font-family: Montserrat, sans-serif; font-weight: 800; font-style: italic; color: white;" class="ms-2">KOKANI RISHTA</span>
-      </a>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item active">
-            <a class="nav-link p-3" href="../" style="font-family: Montserrat, sans-serif;
-                    font-weight: 500;
-                    color: white;">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link p-3" href="../aboutus.html" style="font-family: Montserrat, sans-serif;
-                    font-weight: 500;
-                    color: white;">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link p-3" href="../login/" style="font-family: Montserrat, sans-serif;
-                    font-weight: 500;
-                    color: white;">Login</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center p-0" href="../home/">
+                    <img src="../images/navlogo.png" class="d-none d-sm-block d-inline-block align-top ms-2" alt="" style="max-height: 20vh;">
+                    <span style="font-family: Montserrat, sans-serif; font-weight: 800; font-style: italic; color: white;" class="ms-2">KOKANI RISHTA</span>
+                </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item active">
+                <a class="nav-link p-3" href="../" style="font-family: Montserrat, sans-serif;
+                font-weight: 500;
+                color: white;">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-3" href="../aboutus.html"  style="font-family: Montserrat, sans-serif;
+                font-weight: 500;
+                color: white;">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-3" href="#"  style="font-family: Montserrat, sans-serif;
+                font-weight: 500;
+                color: white;">Login</a>
+              </li>
+            </ul>
+          </div>
+            </div>
+        </nav>
   </header>
   <main>
     <style>
@@ -372,6 +374,3 @@ include '../connect.php';
 </body>
 
 </html>
-<form method="POST" action="controller/UserController.php" enctype="multipart/form-data">
-  <!-- Form fields here... -->
-</form>
