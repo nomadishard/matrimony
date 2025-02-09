@@ -14,10 +14,6 @@ if (!$profile) {
     header("location : ../login/");
 
 }
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Assume $db is your database connection
-   
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hidePicture = isset($_POST['hide_picture']) ? 1 : 0; // Check if checkbox is checked
@@ -280,11 +276,12 @@ document.getElementById('toggleBlur').addEventListener('change', function() {
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="Gender" class="form-label">Gender</label>
-                            <select class="form-select" id="Gender" name="Gender" required>
+                            <select class="form-select" id="Gender" name="Gender" required disabled>
                                 <option value="Male" <?php echo $profile['Gender'] == 'Male' ? 'selected' : ''; ?>>Male</option>
                                 <option value="Female" <?php echo $profile['Gender'] == 'Female' ? 'selected' : ''; ?>>Female</option>
                                 <option value="Other" <?php echo $profile['Gender'] == 'Other' ? 'selected' : ''; ?>>Other</option>
                             </select>
+                            <input type="hidden" name="Gender" value="<?php echo htmlspecialchars($profile['Gender']); ?>">
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="dob" class="form-label">Date of Birth</label>

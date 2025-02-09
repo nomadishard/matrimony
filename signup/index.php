@@ -26,8 +26,8 @@ include '../connect.php';
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand d-flex align-items-center ms-4" href="../">
-        <img src="../images/navlogo.png" class="d-inline-block align-top ms-2" alt="" style="max-height: 20vh;">
+      <a class="navbar-brand d-flex align-items-center" href="../">
+        <img src="../images/navlogo.png" class="d-inline-block align-top" alt="" style="max-height: 20vh;">
         <span style="font-family: Montserrat, sans-serif; font-weight: 800; font-style: italic; color: white;" class="ms-2">KOKANI RISHTA</span>
       </a>
 
