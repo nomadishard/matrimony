@@ -83,7 +83,7 @@ if ($weight !== false && ($weight < 30 || $weight > 200)) {
         // Handle file upload for profile picture
         $profilePicture = $profile['profile_picture']; // Keep existing picture by default
         if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] == 0) {
-            $uploadDir = '..uploads/'; // Ensure this directory exists and is writable
+            $uploadDir = '../uploads/'; // Ensure this directory exists and is writable
             $uploadFile = $uploadDir . basename($_FILES['profile_picture']['name']);
             $imageFileType = strtolower(pathinfo($uploadFile, PATHINFO_EXTENSION));
             
