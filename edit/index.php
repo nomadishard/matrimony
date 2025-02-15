@@ -10,10 +10,10 @@ $result = mysqli_stmt_get_result($stmt);
 $profile = mysqli_fetch_assoc($result);
 
 if (!$profile) {
-    echo "Profile not found";
-    header("location : ../login/");
-
-}
+    echo '<script>
+        window.location.href = "../home/";
+    </script>';
+    exit;}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hidePicture = isset($_POST['hide_picture']) ? 1 : 0; // Check if checkbox is checked

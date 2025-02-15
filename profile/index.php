@@ -10,11 +10,10 @@ $result = mysqli_stmt_get_result($stmt);
 $profile = mysqli_fetch_assoc($result);
 
 if (!$profile) {
-    echo '<script>
-    alert("Profile not found");</script>';
-    header("location:../home/");
-}
-
+echo '<script>
+    window.location.href = "../home/";
+</script>';
+exit;} // Ensure no further code is executed after this
 // Check if the user has already requested contact details
 $user_id = $_SESSION['user_id'] ?? 0; // Assuming you have a user session
 $request_sql = "SELECT * FROM contact_requests WHERE requester_id = ? AND profile_id = ?";
