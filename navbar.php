@@ -1,15 +1,15 @@
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
-    <a class="navbar-brand d-flex align-items-center ms-1 p-0" href="../home/">
-    <img src="../images/navlogo.png" class="d-none d-sm-block d-inline-block align-top ms-2" alt="" style="max-height: 20vh;">
-    <span style="font-family: Montserrat, sans-serif; font-weight: 800; font-style: italic; color: white;" class="ms-2">KOKANI RISHTA</span>
-</a>
+        <a class="navbar-brand d-flex align-items-center ms-1 p-0" href="../home/">
+            <img src="../images/navlogo.png" class="d-none d-sm-block d-inline-block align-top ms-2" alt="" style="max-height: 20vh;">
+            <span style="font-family: Montserrat, sans-serif; font-weight: 800; font-style: italic; color: white;" class="ms-2">KOKANI RISHTA</span>
+        </a>
 
-        
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
+
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto" style="align-items: center;">
                 <li class="nav-item active">
@@ -26,11 +26,12 @@
                         $result = mysqli_query($conn, $sql);
                         $arr = mysqli_fetch_array($result);
                         $name = strtoupper($arr['FirstName']);
-                        $name2 = strtoupper($arr['LastName']);?>
+                        $name2 = strtoupper($arr['LastName']); ?>
                         <?php echo $name . ' ' . $name2; ?>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a href="../edit/" class="dropdown-item">Edit Profile</a></li>
+                        <li><a href="../deletedata.php" class="dropdown-item">Delete Profile</a></li>
                         <li><a href="../logout.php" class="dropdown-item">LOGOUT</a></li>
                     </ul>
                 </li>
@@ -39,27 +40,34 @@
     </div>
 </nav>
 <style>
-.navbar {
-    background-color: #CC2B52;
-    display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Center items vertically */
-    white-space: nowrap; /* Prevent wrapping */
-}
-
-.navbar-brand {
-    display: flex; /* Ensure brand elements align in a row */
-    align-items: center; /* Center logo and text vertically */
-}
-
-.nav-link {
-    padding: 5px 10px; /* Reduce padding for better fit */
-}
-
-@media (max-width: 345px) {
-    .navbar-nav {
-        overflow-x: auto; /* Allow horizontal scrolling if necessary */
-        flex-wrap: nowrap; /* Prevent wrapping of nav items */
+    .navbar {
+        background-color: #CC2B52;
+        display: flex;
+        /* Use flexbox for alignment */
+        align-items: center;
+        /* Center items vertically */
+        white-space: nowrap;
+        /* Prevent wrapping */
     }
-}
-</style>
 
+    .navbar-brand {
+        display: flex;
+        /* Ensure brand elements align in a row */
+        align-items: center;
+        /* Center logo and text vertically */
+    }
+
+    .nav-link {
+        padding: 5px 10px;
+        /* Reduce padding for better fit */
+    }
+
+    @media (max-width: 345px) {
+        .navbar-nav {
+            overflow-x: auto;
+            /* Allow horizontal scrolling if necessary */
+            flex-wrap: nowrap;
+            /* Prevent wrapping of nav items */
+        }
+    }
+</style>
