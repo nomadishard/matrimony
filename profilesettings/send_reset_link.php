@@ -1,7 +1,9 @@
 <?php
 require '../connect.php';
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+
 require '../vendor/autoload.php';
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -29,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
             $mail->Username   = 'fondesthorse11@gmail.com'; // Your Gmail address
-            $mail->Password   = 'mluyywhzombggwtb';  // Use an App Password!
+            $mail->Password   = 'mvnjxiwqkledsids';  // Use an App Password!
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port       = 587;
 
@@ -48,17 +50,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 alert('Reset Link sent successfully!');
                 window.location.href = '../login/';
               </script>";
-
         } catch (Exception $e) {
             echo "Mailer Error: " . $mail->ErrorInfo . "<br>"; // PHPMailer's error message
             echo "Exception message: " . $e->getMessage(); //  Detailed exception message
             // Log the error to a file or database (recommended)
         }
-
     } else {
         echo "<script>alert('No account found with that email address.');
         window.location.href='../profilesettings/';
         </script>";
     }
 }
-?>
