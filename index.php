@@ -90,6 +90,10 @@ if (isset($_COOKIE['remember_me'])) {
                     font-weight: 500;
                     color: white;">About Us</a>
                         </li>
+                        <a class="nav-link p-3" href="pricing/" style="font-family: Montserrat, sans-serif;
+                    font-weight: 500;
+                    color: white;">Pricing</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link p-3" href="login/" style="font-family: Montserrat, sans-serif;
                     font-weight: 500;
@@ -185,9 +189,20 @@ if (isset($_COOKIE['remember_me'])) {
 
     </main>
     <footer class="footer">
-        <p style="background: #72001F;color: white;padding-bottom: 0px;margin-bottom: 0px;text-align: center;
-">&copy; 2024 KOKANIRISHTA.IN . All rights reserved.</p>
+        <p style="background: #72001F; color: white; padding-bottom: 0px; margin-bottom: 0px; text-align: center;">
+            <a href="privacy/" style="color: white; margin: 0 10px;">Privacy Policy</a> |
+            <a href="terms.html" style="color: white; margin: 0 10px;">Terms and Conditions</a> |
+            <a href="refundpolicy.html" style="color: white; margin: 0 10px;">Refund Policy</a><br>
+            &copy; <span id="currentYear"></span> KOKANIRISHTA.IN. All rights reserved.
+        </p>
     </footer>
+
+    <script>
+        // Get the current year
+        const currentYear = new Date().getFullYear();
+        // Set the current year in the footer
+        document.getElementById('currentYear').textContent = currentYear;
+    </script>
     <!-- Bootstrap JavaScript Libraries -->
     <script
         src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
