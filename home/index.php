@@ -197,9 +197,13 @@ if ($_SESSION['status'] == 2 || $_SESSION['status'] == 0) {
 
         </section>
     </main>
-    <footer>
-        <p style="background: #72001F;color: white;padding-bottom: 0px;margin-bottom: 0px;text-align: center;
-">&copy; 2024 KOKANIRISHTA.IN . All rights reserved.</p>
+    <footer class="footer">
+        <p style="background: #72001F; color: white; padding-bottom: 0px; margin-bottom: 0px; text-align: center;">
+            <a href="../privacy/" style="color: white; margin: 0 10px;">Privacy Policy</a> |
+            <a href="../terms.html" style="color: white; margin: 0 10px;">Terms and Conditions</a> |
+            <a href="../refundpolicy.html" style="color: white; margin: 0 10px;">Refund Policy</a><br>
+            &copy; <span id="currentYear"></span> KOKANIRISHTA.IN. All rights reserved.
+        </p>
     </footer>
     <!-- Bootstrap JavaScript Libraries -->
     <script
