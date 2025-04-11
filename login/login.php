@@ -46,6 +46,7 @@ if ($result->num_rows > 0) {
         $_SESSION['gender'] = $user['Gender'];
         $_SESSION['status'] = $st = $user['status'];
         $_SESSION['role'] = $user['admin'];
+        $_SESSION['phone'] = $user['ContactNumber'];
         header("location:../profilestatus/");
     } else {
         echo "<script>
